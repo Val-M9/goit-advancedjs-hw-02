@@ -12,10 +12,11 @@
       href="/img/sprite.svg#logo"
       highlight-act="active"
     />
-    <section class="container">
-      <input type="text" id="datetime-picker" />
-      <button type="button" data-start>Start</button>
-
+    <main class="container">
+      <form class="date-picker-form">
+        <input type="text" id="datetime-picker" />
+        <button type="button" data-start disabled>Start</button>
+      </form>
       <div class="timer">
         <div class="field">
           <span class="value" data-days>00</span>
@@ -34,7 +35,7 @@
           <span class="label">Seconds</span>
         </div>
       </div>
-    </section>
+    </main>
 
     <script type="module" src="./js/1-timer.js"></script>
   </body>

@@ -6,7 +6,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #242424;
+  color: #2e2f42;
   background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -16,7 +16,7 @@
   -webkit-text-size-adjust: 100%;
 
   /* Variables */
-  --indent-row: 24px;
+  /* --indent-row: 24px;
   --indent-col: 24px;
 
   --dark-gray-cl: 46, 47, 66;
@@ -25,7 +25,7 @@
   --light-blue-cl: 108, 140, 255;
   --error-cl: 255, 78, 78;
   --black-cl: 0, 0, 0;
-  --white-cl: 255, 255, 255;
+  --white-cl: 255, 255, 255; */
 }
 
 body {
