@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <load
+      src="./partials/header.html"
+      href="/img/sprite.svg#logo"
+      highlight-curr="active"
+    />
+    <div class="container">
+      <form class="feedback-form" autocomplete="off">
+        <label class="feedback-form-label">
+          Email
+          <input
+            class="feedback-form-input"
+            type="email"
+            name="email"
+            autofocus
+          />
+        </label>
+        <label class="feedback-form-label">
+          Message
+          <textarea
+            class="feedback-form-message"
+            name="message"
+            rows="3"
+          ></textarea>
+        </label>
+        <button class="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script type="module" src="./js/2-form.js"></script>
+  </body>
+</html>

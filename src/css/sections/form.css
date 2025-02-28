@@ -1,0 +1,67 @@
+.feedback-form {
+  justify-self: center;
+  max-width: 408px;
+  width: 100%;
+  min-height: 296px;
+  padding: 24px;
+  margin-top: 50px;
+  border: 1px solid rgba(var(--dark-blue-cl), 0.2);
+  border-radius: 8px;
+}
+
+.feedback-form-label {
+  display: flex;
+  flex-direction: column;
+  color: rgba(var(--dark-gray-cl));
+  letter-spacing: 0.04em;
+  width: 100%;
+}
+
+.feedback-form-input {
+  margin: 8px 0;
+  padding: 8px 16px;
+  height: 40px;
+  border: 1px solid rgba(var(--light-gray-cl));
+  border-radius: 4px;
+  outline: none;
+}
+
+.feedback-form-message {
+  margin: 8px 0 16px 0;
+  padding: 8px 16px;
+  min-height: 80px;
+  border: 1px solid rgba(var(--light-gray-cl));
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.feedback-form-input:focus,
+.feedback-form-input:hover,
+.feedback-form-message:focus,
+.feedback-form-message:hover {
+  border-color: rgba(var(--black));
+}
+
+.submit-btn {
+  padding: 8px 16px;
+  min-width: 95px;
+  background-color: rgba(var(--dark-blue-cl));
+  color: rgba(var(--white-cl));
+  align-self: flex-start;
+  border: 1px solid transparent;
+  outline: none;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: rgba(var(--light-blue-cl));
+}

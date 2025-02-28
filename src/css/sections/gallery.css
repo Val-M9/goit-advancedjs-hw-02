@@ -1,0 +1,13 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  column-gap: var(--indent-col);
+  row-gap: var(--indent-row);
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+}
