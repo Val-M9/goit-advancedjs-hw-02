@@ -12,5 +12,5 @@
 
 /* Sections */
 @import url('./sections/header.css');
-@import url('./sections/gallery.css');
-@import url('./sections/form.css');
+@import url('./sections/timer.css');
+@import url('./sections/snackbar.css');
