@@ -6,7 +6,9 @@
     <title>Task 2</title>
     <script type="module" crossorigin src="/goit-advancedjs-hw-02/2-snackbar.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-BQZ60YyB.css">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/vendor-BbbuE1sJ.js">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/vendor-CZjNVMTf.css">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-zyZaOn9b.css">
   </head>
   <body>
     <header class="header">
@@ -33,28 +35,40 @@
   </div>
 </header>
 
-    <div class="container">
-      <form class="feedback-form" autocomplete="off">
-        <label class="feedback-form-label">
-          Email
-          <input
-            class="feedback-form-input"
-            type="email"
-            name="email"
-            autofocus
-          />
+    <main class="container">
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" class="delay" required />
         </label>
-        <label class="feedback-form-label">
-          Message
-          <textarea
-            class="feedback-form-message"
-            name="message"
-            rows="3"
-          ></textarea>
-        </label>
-        <button class="submit-btn" type="submit">Submit</button>
+
+        <fieldset class="radioset">
+          <legend class="radioset-legend">State</legend>
+          <label class="radio-label">
+            <input
+              class="radio-btn"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            Fulfilled
+          </label>
+          <label class="radio-label">
+            <input
+              class="radio-btn"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            Rejected
+          </label>
+        </fieldset>
+
+        <button class="submit-btn" type="submit">Create notification</button>
       </form>
-    </div>
+    </main>
 
   </body>
 </html>
