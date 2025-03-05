@@ -1,39 +1,67 @@
-const formData = {
-  email: JSON.parse(localStorage.getItem('feedback-form-state'))?.email || '',
-  message:
-    JSON.parse(localStorage.getItem('feedback-form-state'))?.message || '',
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+const refs = {
+  delay: document.querySelector('.delay'),
+  radioBtns: document.querySelectorAll('.radio-btn'),
+  submitBtn: document.querySelector('.submit-btn'),
 };
 
-const form = document.querySelector('.feedback-form');
-const email = form.elements.email;
-const message = form.elements.message;
-
-email.value = formData.email;
-message.value = formData.message;
-
-const handleFormInput = (event) => {
-  const { name, value } = event.target;
-  formData[name] = value.trim();
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+const showMessage = (formStatus, delay = 0) => {
+  switch (formStatus) {
+    case 'required':
+      return iziToast.warning({
+        title: 'Error',
+        message: 'Please fill in all fields',
+        position: 'topRight',
+        transitionIn: 'fadeInDown',
+        resetOnHover: true,
+      });
+    case 'fulfilled':
+      return iziToast.success({
+        title: 'Success',
+        message: `Fulfilled promise in ${delay}ms`,
+        position: 'topRight',
+        transitionIn: 'fadeInDown',
+        resetOnHover: true,
+      });
+    case 'rejected':
+      return iziToast.error({
+        title: 'Error',
+        message: `Rejected promise in ${delay}ms`,
+        position: 'topRight',
+        transitionIn: 'fadeInDown',
+        resetOnHover: true,
+      });
+    default:
+      return;
+  }
 };
 
-const handleSubmitForm = (event) => {
+const onFormSubmit = (event) => {
   event.preventDefault();
-  const { email, message } = JSON.parse(
-    localStorage.getItem('feedback-form-state')
-  );
+  const delay = Number(refs.delay.value);
+  const checkedRadio = [...refs.radioBtns].find((radio) => radio.checked);
 
-  if (!email || !message) {
-    return alert('Fill please all fields!');
+  if (!checkedRadio || !delay) {
+    return showMessage('required');
   }
 
-  console.log({ email, message });
+  const formStatus = checkedRadio.value;
 
-  localStorage.removeItem('feedback-form-state');
-  formData.email = '';
-  formData.message = '';
-  form.reset();
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (formStatus === 'fulfilled') {
+        resolve(formStatus);
+      } else {
+        reject(formStatus);
+      }
+    }, delay);
+  });
+
+  return promise
+    .then((value) => showMessage(value, delay))
+    .catch((error) => showMessage(error, delay));
 };
 
-form.addEventListener('input', handleFormInput);
-form.addEventListener('submit', handleSubmitForm);
+refs.submitBtn.addEventListener('click', onFormSubmit);

@@ -12,28 +12,40 @@
       href="/img/sprite.svg#logo"
       highlight-curr="active"
     />
-    <div class="container">
-      <form class="feedback-form" autocomplete="off">
-        <label class="feedback-form-label">
-          Email
-          <input
-            class="feedback-form-input"
-            type="email"
-            name="email"
-            autofocus
-          />
+    <main class="container">
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" class="delay" required />
         </label>
-        <label class="feedback-form-label">
-          Message
-          <textarea
-            class="feedback-form-message"
-            name="message"
-            rows="3"
-          ></textarea>
-        </label>
-        <button class="submit-btn" type="submit">Submit</button>
+
+        <fieldset class="radioset">
+          <legend class="radioset-legend">State</legend>
+          <label class="radio-label">
+            <input
+              class="radio-btn"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            Fulfilled
+          </label>
+          <label class="radio-label">
+            <input
+              class="radio-btn"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            Rejected
+          </label>
+        </fieldset>
+
+        <button class="submit-btn" type="submit">Create notification</button>
       </form>
-    </div>
+    </main>
 
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
